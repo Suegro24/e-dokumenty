@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>E-dokumenty</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="icon" href="./assets/images/logo-icon.png">
+        <script src="./assets/js/main.js" defer></script>
+    </head>
+    <body>
+        <header class="container mt-5 d-flex flex-column">
+            <div class="row">
+                <div class="col-3 d-flex align-items-center">
+                    <img src="assets/images/logo.png" alt="logo" width="100%">
+                </div>
+                <div class="offset-1 col-2 d-flex align-items-center">
+                    <img src="assets/images/logo-euf.png" alt="logo" width="100%">
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <img src="assets/images/logo-poland.png" alt="logo" width="100%">
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <img src="assets/images/logo-wm.png" alt="logo" width="100%">
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <img src="assets/images/logo-eu.png" alt="logo" width="100%">
+                </div>
+            </div>
+            <div class="row">
+                <ul class="col-12 d-flex justify-content-end mt-5 header__list">
+                    <li class="mr-5 header__list-item color-blue">Zaloguj się</li>
+                    <li class="header__list-item color-blue">E-Usługi</li>
+                    <!-- <li class="mr-5 header__list-item color-blue">Wyloguj się</li>
+                    <li class="mr-5 header__list-item color-blue">Mój profil</li>
+                    <li class="mr-5 header__list-item color-blue">Moje sprawy</li>
+                    <li class="mr-5 header__list-item color-blue">Administracja</li>
+                    <li class="header__list-item color-blue">E-Usługi</li> -->
+                </ul>
+            </div>
+        </header>
+        <main class="container mt-4 mb-5">
+            <header class="row d-flex justify-content-between mb-5">
+                <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
+                    <h2 class="font-weight-bold color-blue">ELEKTRONICZNY KONTAKT Z URZĘDEM?</h2>
+                    <h4 class="color-blue mt-3 mb-4">to nigdy nie było takie proste!</h4>
+                    <p class="line-height-2 font-size-small color-brown">W ramach projektu „Cyfrowy Olsztyn” powstały 54 nowe e-usługi, 
+                        które umożliwiają mieszkańcom miasta składanie wniosków 
+                        lub załatwianie innych praw urzędowych bez wychodzenia z domu.
+                        Dzięki tej rozbudowie łączna ilość e-usług świadczonych 
+                        w Gminie Olsztyn wynosi ponad 170!</p>
+                </div>
+                <div class="col-12 col-sm-6 pr-5">
+                    <img src="assets/images/header-image.png" alt="icon" width="100%">
+                </div>
+                <div class="invalid-person">
+                    <img class="invalid-person__image" src="./assets/images/invalid-person.png" alt="contrast" width="60px" height="60px">
+                    <div class="invalid-person__menu">
+                        <button id="changeContrastButton" class="button">Zmień kontrast</button>
+                        <p class="font-weight-bold">Rozmiar tekstu</p>
+                        <ul class="invalid-person__menu-list">
+                            <li data-fontSize="small" class="invalid-person__menu-list-item">A</li>
+                            <li data-fontSize="medium" class="invalid-person__menu-list-item invalid-person__menu-list-item--medium">A</li>
+                            <li data-fontSize="big" class="invalid-person__menu-list-item invalid-person__menu-list-item--big">A</li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="row pt-5 pb-5">
+                <h2 class="col-12 font-weight-bold color-blue text-center">E-USŁUGI DOSTĘPNE W URZĘDZIE</h2>
+                <div class="col-12 mt-5 d-flex justify-content-between">
+                    <input class="flex-grow-1 input" type="text" placeholder="wyszukaj interesującą Cię e-usługę">
+                    <button class="button ml-2">Szukaj</button>
+                </div>
+            </div>
+            <div class="row mt-5 mb-5 px-0 d-flex justify-content-center flex-wrap services">
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/id.png" alt="ID card" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Dowód osobisty</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/wedding-rings.png" alt="wedding" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Stan cywilny</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/hand-with-coin.png" alt="finances" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Finanse</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/document.png" alt="taxes" width="40%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Podatki</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/car.png" alt="vehicles and transport" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Pojazdy i transport</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/home.png" alt="immovables" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Obsługa nieruchomości</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/recycle.png" alt="municipal waste" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Odpady komunalne</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/map.png" alt="geodesy" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Usługi geodezyjne</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/mayor.png" alt="patronage" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Patronat Prezydenta Miasta</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/education.png" alt="education" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Edukacja</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/money.png" alt="scholarship" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Stypendia</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/sports.png" alt="sport clubs" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Kluby sportowe</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/wine.png" alt="sale of alcohol" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Sprzedaż alkoholi</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="image mx-auto">
+                        <img src="assets/images/ellipsis.png" alt="other" width="55%">
+                    </div>
+                    <p class="text-center color-blue font-weight-bold font-size-medium pt-5 description">Inne usługi</p>
+                    <ul class="service__list">
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Licencja na przewóz osób taksówką osobową</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Udzielenie licencji na wykonywanie krajowego transportu drogowego rzeczy</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie licencji na wykonywanie krajowego transportu drogowego</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Wydanie zaświadczenia na krajowy niezarobkowy przewóz drogowy na potrzeby własne</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika tablic rejestracyjnych</p>
+                        </li>
+                        <li class="d-flex service__list-item align-items-center">
+                            <img src="assets/images/up-arrow-blue.png" alt="arrow" width="30px" height="30px">
+                            <p class="ml-4 font-size-medium">Złożenie wniosku o wydanie wtórnika dowodu rejestracyjnego bez konieczności wydania pozwolenia czasowego</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <h2 class="col-12 mt-5 mb-5 font-weight-bold color-blue text-center">JAK ZACZĄĆ?</h2>
+                <div class="col-12 mb-5 mt-5">
+                    <div class="d-flex">
+                        <img class="help-section-image" src="assets/images/green-1.png" alt="one" width="80px" height="180px">
+                        <div class="d-flex flex-column ml-5">
+                            <h2 class="color-blue">ZALOGUJ SIĘ</h2>
+                            <p class="line-height-2 color-dark-blue">Aby móc skorzystać w pełni z wszystkich funkcjonalności należy posiadać zarejestrowany Profil Zaufany na platformie ePUAP lub posiadać cyfrowy podpis kwalifikowalny. Rejestracja Profilu Zaufanego jest w pełni darmowa, którą możesz przeprowadzić klikając tutaj Zarejestruj się teraz.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex px-5 justify-content-around mt-3">
+                        <div class="col-4 col-lg-3">
+                            <img src="assets/images/gov.png" alt="gov" width="100%">
+                        </div>
+                        <div class="col-4 col-lg-3">
+                            <img src="assets/images/certificate.png" alt="certificate" width="100%">
+                        </div>
+                        <div class="col-4 col-lg-3">
+                            <img src="assets/images/umo.png" alt="umo" width="100%">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-5 mb-5 d-flex">
+                    <img class="help-section-image" src="assets/images/green-2.png" alt="two" width="80px" height="180px">
+                    <div class="ml-5">
+                        <h2 class="color-blue">WYSZUKAJ E-USŁUGI</h2>
+                        <p class="line-height-2 color-dark-blue">W celu wyszukania interesującej Cię e-usługi skorzystaj z zamieszczonych wyżej ikon z kategoriami tematycznymi.
+                            Po kliknięciu w ikonę wyświetlone zostaną e-usługi przypisane do danej kategorii. Możesz także wykorzystać 
+                            moduł wyszukiwarki. Po wpisaniu szukanej frazy wyświetlone zostaną wyświetlone wyniki wyszukiwania. </p>
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="d-flex">
+                        <img class="help-section-image" src="assets/images/green-3.png" alt="three" width="80px" height="180px">
+                        <div class="d-flex flex-column ml-5">
+                            <h2 class="color-blue">SPRAWDŹ SWOJE ROZLICZENIA</h2>
+                            <p class="line-height-2 color-dark-blue">Dzięki e-usługom Urząd Miasta w Olsztynie masz możliwość sprawdzenia swoich rozliczeń względem urzędu, zobowiązań finansowych urzędu względem Ciebie, a także danych umów, w których jesteś drugim kontrahentem. Portal EPO umożliwi Ci również opłacenie online Twoich zobowiązań finansowych.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex px-5 justify-content-around align-items-center mt-3">
+                        <div class="col-6">
+                            <img src="assets/images/logo-2.png" alt="logo" width="100%">
+                        </div>
+                        <div class="col-3">
+                            <img src="assets/images/epo.png" alt="epo" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <h2 class="col-12 mt-5 font-weight-bold color-blue text-center">KORZYŚCI WYNIKAJĄCE Z E-USŁUG</h2>
+                <div class="mt-5 px-4 d-flex benefits">
+                    <div class="d-flex flex-column align-items-center benefit benefit--green">
+                        <div class="image">
+                            <img src="./assets/images/armchair.svg.png" alt="convenience" width="100%">
+                        </div>
+                        <h5 class="color-blue text-center mt-4">WYGODA UŻYTKOWANIA</h5> 
+                        <p class="mt-3 text-center color-dark-blue">z e-usług skorzystasz w zaciszu własnego mieszkania lub biura</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center benefit benefit">
+                        <div class="image">
+                            <img src="./assets/images/time-left.png" alt="time" width="100%">
+                        </div>
+                        <h5 class="color-blue text-center mt-4">OSZCZĘDNOŚĆ CZASU</h5> 
+                        <p class="mt-3 text-center color-dark-blue">rezygnacja z długiego stania w kolejach do Urzędu</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center benefit benefit--green">
+                        <div class="image">
+                            <img src="./assets/images/planet-earth.png" alt="planet" width="100%">
+                        </div>
+                        <h5 class="color-blue text-center mt-4">OCHRONA ŚRODOWISKA</h5> 
+                        <p class="mt-3 text-center color-dark-blue">elektroniczne usługi to mniejsze zużycie papieru</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center benefit benefit">
+                        <div class="image">
+                            <img src="./assets/images/computer.png" alt="computer" width="90%">
+                        </div>
+                        <h5 class="color-blue text-center mt-4">CYFROWY URZĄD</h5> 
+                        <p class="mt-3 text-center color-dark-blue">dokumenty wyślesz online bez konieczności wychodzenia z domu</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="container-fluid mt-5 pt-5">
+            <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-6 d-flex justify-content-between align-items-center footer-green">
+                    <p>2021 © Centrum Informatycznych Usług Wspólnych Olsztyna</p>
+                    <p>Deklaracja dostępności</p>
+                </div>
+                <div class="col-12 col-lg-2 col-sm-4 ml-md-5 ml-0 d-flex justify-content-center">
+                    <img src="assets/images/ciuwo.png" alt="ciuwo" width="170px">
+                </div>
+                <div class="col-12 col-lg-1 col-sm-4 mt-3 mt-sm-0 d-flex justify-content-center">
+                    <img src="assets/images/olsztyn.png" alt="olsztyn" width="80px">
+                </div>
+                <div class="col-12 col-lg-1 col-sm-3 mt-3 mt-sm-0 d-flex justify-content-center">
+                    <img src="assets/images/ogrod.png" alt="ogrod" width="60px">
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
