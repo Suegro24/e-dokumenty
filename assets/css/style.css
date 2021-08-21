@@ -264,6 +264,7 @@ ul {
   opacity: 0;
   -webkit-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
+  display: none;
 }
 
 .services .service__list-item {
