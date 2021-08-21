@@ -40,9 +40,11 @@ const openServiceSubmenu = (e) => {
 
         currentImage.classList.add('image--active');
 
+        const windowWidth = window.innerWidth;
+
         const currentList = currentService.querySelector('.service__list');
         const TOTAL_LIST_ITEMS = currentList.childElementCount;
-        const LIST_ITEM_HEIGHT = 70;
+        const LIST_ITEM_HEIGHT = windowWidth > 1200 ? 70 : windowWidth > 800 ? 80 : windowWidth > 400 ? 110 : 140;
         const CURRENT_SERVICE_IMAGE_AND_DESCRIPTION_HEIGHT = 300;
         const BORDER_DISTANCE = 50
         const TOTAL_SERVICE_HEIGHT = TOTAL_LIST_ITEMS*LIST_ITEM_HEIGHT + 2*BORDER_DISTANCE + CURRENT_SERVICE_IMAGE_AND_DESCRIPTION_HEIGHT;
@@ -51,7 +53,7 @@ const openServiceSubmenu = (e) => {
 
         const servicesContainerLeftAlign = getElementLeft(currentService.parentElement).left;
         const currentServiceLeftAlign = getElementLeft(currentService).left;
-        const defaultLeftAlign = 100;
+        const defaultLeftAlign = windowWidth > 992 ? 100 : windowWidth > 768 ? 50 : windowWidth > 600 ? -25 : windowWidth > 450 ? 60 : 0;
         const currentListLeftAlign = servicesContainerLeftAlign - currentServiceLeftAlign + defaultLeftAlign;
 
         currentList.style.left = `${currentListLeftAlign}px`;
@@ -96,11 +98,12 @@ const invalidPersonImage = document.querySelector('.invalid-person__image');
 let isInvalidPersonMenuOpen = false;
 
 const openInvalidPersonMenu = () => {
+    const menu = document.querySelector('.invalid-person__menu');
     if (isInvalidPersonMenuOpen) {
-        invalidPerson.style.transform = 'translateX(0)';
+        invalidPerson.style.width = '58px';
     }
     else {
-        invalidPerson.style.transform = 'translateX(-300px)';
+        invalidPerson.style.width = '358px';
     }
     isInvalidPersonMenuOpen = !isInvalidPersonMenuOpen;
 }
