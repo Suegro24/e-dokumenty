@@ -16,6 +16,10 @@ body {
     background-color: var(--white);
 }
 
+html {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -218,13 +222,13 @@ ul {
 
         &__list {
             position: absolute;
-            width: 1000px;
+            width: 100%;
             top: 360px;
             color: var(--fontBrown);
             z-index: 0;
             opacity: 0;
             transition: opacity .5s ease-in-out;
-            display: none;
+            display: blue;
 
             &-item {
                 margin-top: 20px;
@@ -312,6 +316,12 @@ ul {
     .footer-green {
         padding: 20px;
     }
+
+    .header__list {
+        &-item {
+            padding: 0;
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -321,6 +331,15 @@ ul {
 
         .benefit {
             flex-basis: 50%;
+        }
+    }
+
+    .header__list {
+        flex-wrap: wrap;
+        justify-content: center !important;
+
+        &-item {
+            text-align: center;
         }
     }
 }
