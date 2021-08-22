@@ -10,7 +10,6 @@
 }
 
 body {
-    max-width: 1920px;
     overflow-x: hidden;
     font-family: 'Century Gothic', sans-serif;
     background-color: var(--white);
@@ -317,6 +316,10 @@ ul {
             
         }
     }
+}
+
+.footer {
+    max-width: 1920px;
 }
 
 .footer-green {

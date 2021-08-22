@@ -10,7 +10,6 @@
 }
 
 body {
-  max-width: 1920px;
   overflow-x: hidden;
   font-family: 'Century Gothic', sans-serif;
   background-color: var(--white);
@@ -358,6 +357,10 @@ ul {
 
 .benefits .benefit--green .image {
   background-color: var(--green);
+}
+
+.footer {
+  max-width: 1920px;
 }
 
 .footer-green {
