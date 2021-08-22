@@ -9,7 +9,7 @@ const openServiceSubmenu = (e) => {
         currentService = currentService.parentElement;
         i++;
 
-        if (i >= 3) {
+        if (i >= 4) {
             return;
         }
     }
@@ -25,6 +25,7 @@ const openServiceSubmenu = (e) => {
 
         setTimeout(() => {
             currentService.style.minHeight = 'unset';
+            currentList.style.display = 'none';
         }, 600);
     }
     else {
@@ -36,6 +37,7 @@ const openServiceSubmenu = (e) => {
             list.style.opacity = '0';
             list.style.zIndex = '0';
             service.style.minHeight = 'unset';
+            list.style.display = 'none';
         })
 
         currentImage.classList.add('image--active');
@@ -57,8 +59,12 @@ const openServiceSubmenu = (e) => {
         const currentListLeftAlign = servicesContainerLeftAlign - currentServiceLeftAlign + defaultLeftAlign;
 
         currentList.style.left = `${currentListLeftAlign}px`;
+        currentList.style.display = 'block';
         currentList.style.zIndex = '2';
-        currentList.style.opacity = '1';
+
+        setTimeout(() => {
+            currentList.style.opacity = '1';
+        }, 200);
     }
 }
 

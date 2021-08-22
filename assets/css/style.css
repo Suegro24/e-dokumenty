@@ -32,6 +32,16 @@ p {
   margin: 0;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
 }
@@ -62,6 +72,10 @@ ul {
 
 .color-dark-blue {
   color: var(--fontDarkBlue);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .input {
@@ -270,6 +284,7 @@ ul {
   -webkit-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
   display: blue;
+  display: none;
 }
 
 .services .service__list-item {
